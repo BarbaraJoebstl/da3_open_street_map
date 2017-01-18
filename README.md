@@ -242,7 +242,7 @@ pizza : 69
 - It also would be interessting to calculate the the percentage of the surface types, because it is said that Berlin is a "green" city.
 
 #### Improve the dataset
-- Gameification would be a good way to encourage people to contribute more and correct data. For example games that are using geodata, like Pokemon Go or Geocaching,
+- Gamification would be a good way to encourage people to contribute more and correct data. For example games that are using geodata, like Pokemon Go or Geocaching,
     could add functionality to the osm data. People could be attracted by leveling up or get other benefits for the game.  
 - Because nowadays google maps is very widely used and people can easily add amenities etc. via google, it would be great if that data could be merged into the OSM data.
 
