@@ -1,10 +1,10 @@
 
-***DA3 OPEN STREET MAP - DATA WRANGLING WITH MONGODB***
+##DA3 OPEN STREET MAP - DATA WRANGLING WITH MONGODB
 
-*Map Area: Berlin, Germany* - https://www.openstreetmap.org/#map=13/52.5180/13.4076
+###Map Area: Berlin, Germany* - https://www.openstreetmap.org/#map=13/52.5180/13.4076
 The area contains the central area of Berlin. As it is one of the biggest cities in Europe, we can expect a lot of additional information about this area from the osm project.
 
-*Sample of nodes in an .osm file:*
+#### Sample of nodes in an .osm file:
 <node id="302864488" visible="true" version="7" changeset="36059354" timestamp="2015-12-20T06:35:42Z" user="atpl_pilot" uid="881429" lat="52.5259586" lon="13.3894424">
   <tag k="addr:city" v="Berlin"/>
   <tag k="addr:country" v="DE"/>
@@ -23,12 +23,12 @@ The area contains the central area of Berlin. As it is one of the biggest cities
     <tag k="oneway" v="yes"/>
   </way>
 
-**File Sizes**
+#### File Sizes
   - OSMSize 154.6 MB
   - SampleSize 11.3 MB
   - Size of cleand data in mongoDB: 60.1 MB
 
-**Anticipated Problems**
+## Anticipated Problems
  - The mixture between English and German words makes it a little bit more difficult to compare values. For example bicycle ways can be set as "cycleway", "bicycle_road" or "bicycle".
  - Postal codes are wrong or not in the correct range for Berlin. 
  - Postal codes and suburbs are not corresponding.
@@ -37,8 +37,7 @@ The area contains the central area of Berlin. As it is one of the biggest cities
  - When counting restaurants, it also shows that there is a mixture of languages. Which is shown with the entries 'coffee_shop' and '*Kaffee&Kuchen*', which is the same.
  - Incomplete data. 
 
-***Auditing***
-
+## Auditing
 *Problems encounterd while auditing street names:*
    In German language there a lot of different namings and writings for streets: For example a 'Straße' can be 'Auerstraße' or     'Antwerpener Straße' or 'Alfred-Jung-Straße' or 'Straße des 17. Juni'. This happens also to other street types, like              '*weg*', '*zeile*', '*platz*' and also for streets that are or used to be near rivers like: '*damm*', '*ufer*', '*graben*'.
    Because there a lot of bridges in Berlin, bridges belong to ways *brücke*. 
@@ -56,7 +55,8 @@ The area contains the central area of Berlin. As it is one of the biggest cities
     Park : 6
     ...
 
-**Audit postal codes and suburbs**
+ **Audit postal codes and suburbs**
+
 Audit Post codes and suburbs The postal code in Berlin ranges from 10115 to 14199.
 In the following task we want to check if the postal code is valid for Berlin and if 
 it matches with the suburb according to thist list : 
@@ -68,7 +68,8 @@ https://en.wikipedia.org/wiki/List_of_postal_codes_in_Germany#Berlin
     wrong Wilmersdorf 10789 [10707, 10709, 10711, 10713, 10715, 10719, 10717]
     ...
 
-***Data cleaning***    
+## Data cleaning
+
 The wrong suburbs from above, where already found in the audit_suburbs(). These values are neighbourhoods and not suburbs.
 There are some suburbs that don't match with our postal codes.
 In a next step we could check the exact address and find out if the postal code or the suburb is wrong. Or both.
@@ -84,7 +85,7 @@ mapping_suburbs = { "Alt-Treptow": "Köpenick",
                     "Charlottenburg-Wilmersdorf": "Charlottenburg" }
 ```
 
-***Data Exploration with MongoDB***
+## Data Exploration with MongoDB
 
 **Get statistics of our database**
 ```python
@@ -235,15 +236,17 @@ coffee_shop : 70
 pizza : 69
 
 
-***Additional suggestions for improving and analyzing the data***
-
-*Length of bicycle ways and alles bio*
-
+## Additional suggestions for improving and analyzing the data
+#### Length of bicycle ways and alles bio
 - it would be to calculate the length of all bycicley ways compared to the 'normal' street length. 
 - It also would be interessting to calculate the the percentage of the surface types, because it is said that Berlin is a "green" city.
-*Improve the dataset*
 
+#### Improve the dataset
 - Gameification would be a good way to encourage people to contribute more and correct data. For example games that are using geodata, like Pokemon Go or Geocaching,
     could add functionality to the osm data. People could be attracted by leveling up or get other benefits for the game.  
 - Because nowadays google maps is very widely used and people can easily add amenities etc. via google, it would be great if that data could be merged into the OSM data.
 
+#### Potential problems
+ - The language gap may be a problem. It may be that keys from different languages exist in one area, altough they mean the same. When doing analytics this can be missed out easily. 
+ - Missing or wrong data is a problem. This may skew findings in analytics or simply misslead people. http://maproulette.org/ could help to minor the problems.
+ - Add totally wrong data in bad faith. As everone can add data to the OSM Project, it can happen that people add false data just for fun.
