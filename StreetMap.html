@@ -11773,7 +11773,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Sample of nodes in an .osm file:</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#Sample of nodes in an .osm file:</span>
 
 <span class="o">&lt;</span><span class="n">node</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;302864488&quot;</span> <span class="n">visible</span><span class="o">=</span><span class="s2">&quot;true&quot;</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;7&quot;</span> <span class="n">changeset</span><span class="o">=</span><span class="s2">&quot;36059354&quot;</span> <span class="n">timestamp</span><span class="o">=</span><span class="s2">&quot;2015-12-20T06:35:42Z&quot;</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;atpl_pilot&quot;</span> <span class="n">uid</span><span class="o">=</span><span class="s2">&quot;881429&quot;</span> <span class="n">lat</span><span class="o">=</span><span class="s2">&quot;52.5259586&quot;</span> <span class="n">lon</span><span class="o">=</span><span class="s2">&quot;13.3894424&quot;</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">tag</span> <span class="n">k</span><span class="o">=</span><span class="s2">&quot;addr:city&quot;</span> <span class="n">v</span><span class="o">=</span><span class="s2">&quot;Berlin&quot;</span><span class="o">/&gt;</span>
@@ -11817,13 +11817,13 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="kn">as</span> <span class="nn">ET</span>
 <span class="kn">import</span> <span class="nn">pprint</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">codecs</span>
 <span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 
 <span class="c1">#https://www.openstreetmap.org/export#map=13/52.5180/13.4076</span>
 <span class="n">OSM_FILE</span> <span class="o">=</span> <span class="s1">&#39;berlin_map.osm&#39;</span>
@@ -11840,7 +11840,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#check file size</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#check file size</span>
 <span class="c1">#resource: http://stackoverflow.com/questions/2104080/how-to-check-file-size-in-python</span>
 
 <span class="k">def</span> <span class="nf">convert_bytes</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
@@ -11861,7 +11861,7 @@ div#notebook {
         <span class="k">return</span> <span class="n">convert_bytes</span><span class="p">(</span><span class="n">file_info</span><span class="o">.</span><span class="n">st_size</span><span class="p">)</span>
     
 <span class="n">size</span> <span class="o">=</span> <span class="n">file_size</span><span class="p">(</span><span class="n">OSM_FILE</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;OSMSize&#39;</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;OSMSize&#39;</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11898,7 +11898,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 
 <span class="n">k</span> <span class="o">=</span> <span class="mi">14</span> <span class="c1"># Parameter: take every k-th top level element</span>
@@ -11921,7 +11921,7 @@ div#notebook {
     <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
     <span class="c1"># Write every kth top level element</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">OSM_FILE</span><span class="p">)</span>
+    <span class="k">print</span> <span class="p">(</span><span class="n">OSM_FILE</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">get_element</span><span class="p">(</span><span class="n">OSM_FILE</span><span class="p">)):</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">i</span> <span class="o">%</span> <span class="n">k</span><span class="p">:</span>
@@ -11955,9 +11955,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#check size of sample file</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#check size of sample file</span>
 <span class="n">sample_size</span> <span class="o">=</span> <span class="n">file_size</span><span class="p">(</span><span class="n">SAMPLE_FILE</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;SampleSize&#39;</span><span class="p">,</span> <span class="n">sample_size</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;SampleSize&#39;</span><span class="p">,</span> <span class="n">sample_size</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11994,7 +11994,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#get benchmark data</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#get benchmark data</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Reference:</span>
 <span class="sd">    https://classroom.udacity.com/nanodegrees/nd002/parts/0021345404/modules/316820862075462/lessons/768058569/concepts/8426285720923#</span>
@@ -12021,10 +12021,10 @@ div#notebook {
 
 <span class="n">users</span><span class="p">,</span> <span class="n">count_nodes</span><span class="p">,</span> <span class="n">count_ways</span><span class="p">,</span> <span class="n">count_relations</span> <span class="o">=</span> <span class="n">get_benchmark_data</span><span class="p">(</span><span class="n">OSM_FILE</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;UNIQUE USERS: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">users</span><span class="p">))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;NODES:&#39;</span><span class="p">,</span> <span class="n">count_nodes</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;WAYS:&#39;</span><span class="p">,</span> <span class="n">count_ways</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;RELATIONS&#39;</span><span class="p">,</span> <span class="n">count_relations</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;UNIQUE USERS: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">users</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;NODES:&#39;</span><span class="p">,</span> <span class="n">count_nodes</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;WAYS:&#39;</span><span class="p">,</span> <span class="n">count_ways</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;RELATIONS&#39;</span><span class="p">,</span> <span class="n">count_relations</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12080,7 +12080,7 @@ RELATIONS 3203
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;reference:</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="sd">&#39;&#39;&#39;reference:</span>
 <span class="sd">https://classroom.udacity.com/nanodegrees/nd002/parts/0021345404/modules/316820862075462/lessons/768058569/concepts/8755386150923#&#39;&#39;&#39;</span>
 
 <span class="c1">#start with lower case letters, due to different ways of writing street names in german</span>
@@ -12088,10 +12088,10 @@ RELATIONS 3203
             <span class="s1">&#39;promenade&#39;</span><span class="p">,</span> <span class="s1">&#39;park&#39;</span><span class="p">,</span> <span class="s1">&#39;am&#39;</span><span class="p">,</span> <span class="s1">&#39;an&#39;</span><span class="p">,</span> <span class="s1">&#39;markt&#39;</span><span class="p">,</span> <span class="s1">&#39;steg&#39;</span><span class="p">,</span> <span class="s1">&#39;hof&#39;</span><span class="p">,</span> <span class="s1">&#39;zeile&#39;</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">audit_street_type</span><span class="p">(</span><span class="n">street_types</span><span class="p">,</span> <span class="n">street_name</span><span class="p">):</span>
-    <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">expected</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">street_name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
-            <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="bp">True</span>
             <span class="k">break</span>
            
     <span class="k">if</span> <span class="n">found</span><span class="p">:</span>
@@ -12113,13 +12113,13 @@ RELATIONS 3203
                 <span class="k">if</span> <span class="n">is_street_name</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
                     <span class="n">audit_street_type</span><span class="p">(</span><span class="n">street_types</span><span class="p">,</span> <span class="n">tag</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">])</span>
     <span class="n">osm_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Numbers of different street types in Berlin&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Numbers of different street types in Berlin&#39;</span><span class="p">)</span>
     <span class="n">pretty_print</span><span class="p">(</span><span class="n">street_types</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">pretty_print</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">sorted_key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">sorted_key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]),</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="n">sorted_key</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">sorted_key</span><span class="p">]))</span>
+        <span class="k">print</span> <span class="p">(</span><span class="n">sorted_key</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">sorted_key</span><span class="p">]))</span>
         
 <span class="n">audit_street_names</span><span class="p">(</span><span class="n">OSM_FILE</span><span class="p">)</span>
 </pre></div>
@@ -12207,7 +12207,7 @@ Westring : 1
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">suburbs_with_postal_codes</span> <span class="o">=</span> <span class="p">{</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">suburbs_with_postal_codes</span> <span class="o">=</span> <span class="p">{</span>
                             <span class="s1">&#39;Mitte&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10115</span><span class="p">,</span> <span class="mi">10117</span><span class="p">,</span> <span class="mi">10119</span><span class="p">,</span> <span class="mi">10178</span><span class="p">,</span> <span class="mi">10179</span><span class="p">],</span>
                              <span class="s1">&#39;Gesundbrunnen&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">13347</span><span class="p">,</span> <span class="mi">13353</span><span class="p">,</span> <span class="mi">13355</span><span class="p">,</span> <span class="mi">13357</span><span class="p">,</span> <span class="mi">13359</span><span class="p">,</span> <span class="mi">13409</span><span class="p">],</span>
                              <span class="s1">&#39;Friedrichshain&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10243</span><span class="p">,</span> <span class="mi">10245</span><span class="p">,</span> <span class="mi">10247</span><span class="p">,</span> <span class="mi">10249</span><span class="p">],</span>
@@ -12248,7 +12248,7 @@ Westring : 1
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#create a list with all postal codes</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#create a list with all postal codes</span>
 <span class="n">all_postal_codes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">suburbs_with_postal_codes</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">v_</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
@@ -12276,7 +12276,7 @@ Westring : 1
     <span class="n">osm_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="n">audit_postal_codes</span><span class="p">(</span><span class="n">OSM_FILE</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">wrong_postal_codes</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">wrong_postal_codes</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12314,7 +12314,7 @@ Westring : 1
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_suburbs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">all_suburbs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">suburbs_with_postal_codes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
     <span class="n">all_suburbs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 <span class="c1">#create a list to output wrong postal codes    </span>
@@ -12339,7 +12339,7 @@ Westring : 1
     <span class="k">return</span> <span class="p">(</span><span class="n">elem</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;addr:suburb&quot;</span><span class="p">)</span>
 
 <span class="n">audit_suburbs</span><span class="p">(</span><span class="n">SAMPLE_FILE</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">wrong_suburbs</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">wrong_suburbs</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12381,14 +12381,14 @@ Alt-Treptow and Plänterwald are neighbourhoods in Köpenick.</p>
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#check if postal code and suburb are correct</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#check if postal code and suburb are correct</span>
 <span class="n">check_suburbs_and_postal_codes</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
     
 <span class="k">def</span> <span class="nf">audit_postal_code_and_suburb</span><span class="p">(</span><span class="n">osmfile</span><span class="p">):</span>
     <span class="n">osm_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">osmfile</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">event</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">ET</span><span class="o">.</span><span class="n">iterparse</span><span class="p">(</span><span class="n">osm_file</span><span class="p">,</span> <span class="n">events</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">,)):</span>
-        <span class="n">current_suburb</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="n">current_postal_code</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">current_suburb</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">current_postal_code</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="k">if</span> <span class="n">elem</span><span class="o">.</span><span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;way&quot;</span> <span class="ow">or</span> <span class="n">elem</span><span class="o">.</span><span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;node&quot;</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">elem</span><span class="o">.</span><span class="n">iter</span><span class="p">(</span><span class="s2">&quot;tag&quot;</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">is_suburb</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
@@ -12400,7 +12400,7 @@ Alt-Treptow and Plänterwald are neighbourhoods in Köpenick.</p>
     <span class="n">osm_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="n">audit_postal_code_and_suburb</span><span class="p">(</span><span class="n">OSM_FILE</span><span class="p">)</span> 
-<span class="nb">print</span> <span class="p">(</span><span class="n">check_suburbs_and_postal_codes</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">check_suburbs_and_postal_codes</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12427,7 +12427,7 @@ Alt-Treptow and Plänterwald are neighbourhoods in Köpenick.</p>
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">check_check</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">check_check</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="c1">#check if key, value also exist in key and value array</span>
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
@@ -12435,9 +12435,9 @@ Alt-Treptow and Plänterwald are neighbourhoods in Köpenick.</p>
             <span class="k">if</span> <span class="n">first</span> <span class="ow">in</span> <span class="n">second</span><span class="p">:</span>
                 <span class="k">pass</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;no suburb named&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;no suburb named&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
             
 <span class="n">check_check</span><span class="p">(</span><span class="n">check_suburbs_and_postal_codes</span><span class="p">,</span> <span class="n">suburbs_with_postal_codes</span><span class="p">)</span>  
 </pre></div>
@@ -12491,7 +12491,7 @@ But for now it looks ok.</p>
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39; </span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="sd">&#39;&#39;&#39; </span>
 <span class="sd">reference:</span>
 <span class="sd">https://classroom.udacity.com/nanodegrees/nd002/parts/0021345404/modules/316820862075462/lessons/768058569/concepts/8755386150923#&#39;&#39;&#39;</span>
 
@@ -12503,10 +12503,10 @@ But for now it looks ok.</p>
     <span class="n">node</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">created_dict</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">pos_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">long</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nb">long</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">lat</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">address_dict</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">bicycle_way</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">bicycle_way</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;node&quot;</span> <span class="ow">or</span> <span class="n">element</span><span class="o">.</span><span class="n">tag</span> <span class="o">==</span> <span class="s2">&quot;way&quot;</span> <span class="p">:</span>      
         <span class="n">node</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">tag</span>
@@ -12524,8 +12524,8 @@ But for now it looks ok.</p>
                 <span class="n">node</span><span class="p">[</span><span class="s2">&quot;created&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">created_dict</span>
             <span class="k">if</span> <span class="n">lat</span><span class="p">:</span>
                 <span class="n">pos_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">long</span><span class="p">:</span>
-                <span class="n">pos_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">long</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">long</span><span class="p">:</span>
+                <span class="n">pos_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">long</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pos_list</span><span class="p">):</span>
                 <span class="n">node</span><span class="p">[</span><span class="s2">&quot;pos&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pos_list</span>
         
@@ -12535,7 +12535,7 @@ But for now it looks ok.</p>
             
             <span class="c1">#get all bicycle ways, the german and the english values</span>
             <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">BICYCLE_WAYS</span> <span class="ow">and</span> <span class="n">value</span> <span class="o">!=</span> <span class="s2">&quot;no&quot;</span><span class="p">:</span>
-                <span class="n">bicycle_way</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">bicycle_way</span> <span class="o">=</span> <span class="bp">True</span>
             <span class="c1">#get the address   </span>
             <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s1">&#39;addr:suburb&#39;</span><span class="p">:</span>
                 <span class="n">address_dict</span><span class="p">[</span><span class="s1">&#39;suburb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">update_suburbs</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">mapping_suburbs</span><span class="p">)</span>
@@ -12559,13 +12559,13 @@ But for now it looks ok.</p>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_refs_list</span><span class="p">):</span>
             <span class="n">node</span><span class="p">[</span><span class="s2">&quot;node_refs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">node_refs_list</span>
         
-        <span class="k">if</span> <span class="n">bicycle_way</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="n">bicycle_way</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">:</span> 
             <span class="n">node</span><span class="p">[</span><span class="s1">&#39;bicycle_way&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Yes&#39;</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">address_dict</span><span class="p">):</span>
             <span class="n">node</span><span class="p">[</span><span class="s1">&#39;address&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">address_dict</span>
         <span class="k">return</span> <span class="n">node</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">None</span>
                 
 <span class="c1">#fix suburbs before exporting to mongoDB</span>
 <span class="n">mapping_suburbs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;Alt-Treptow&quot;</span><span class="p">:</span> <span class="s2">&quot;Köpenick&quot;</span><span class="p">,</span>
@@ -12584,7 +12584,7 @@ But for now it looks ok.</p>
     <span class="k">return</span> <span class="n">suburb</span>
 
 <span class="k">def</span> <span class="nf">process_map</span><span class="p">(</span><span class="n">file_in</span><span class="p">):</span>
-    <span class="n">file_out</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">.json&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_in</span><span class="p">)</span>
+    <span class="n">file_out</span> <span class="o">=</span> <span class="s2">&quot;{0}.json&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_in</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">with</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file_out</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fo</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">ET</span><span class="o">.</span><span class="n">iterparse</span><span class="p">(</span><span class="n">file_in</span><span class="p">):</span>
@@ -12618,8 +12618,8 @@ But for now it looks ok.</p>
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">example</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">example</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">example</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">example</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12656,8 +12656,8 @@ But for now it looks ok.</p>
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pymongo</span>
-<span class="kn">from</span> <span class="nn">pymongo</span> <span class="k">import</span> <span class="n">MongoClient</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pymongo</span>
+<span class="kn">from</span> <span class="nn">pymongo</span> <span class="kn">import</span> <span class="n">MongoClient</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">27017</span><span class="p">)</span>
 
@@ -12667,7 +12667,7 @@ But for now it looks ok.</p>
     <span class="n">db</span><span class="o">.</span><span class="n">berlin</span><span class="o">.</span><span class="n">drop</span><span class="p">()</span>      
     <span class="c1">#import data into a collection named &quot;berlin&quot;</span>
     <span class="n">db</span><span class="o">.</span><span class="n">berlin</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">berlin</span><span class="o">.</span><span class="n">find_one</span><span class="p">())</span>
+    <span class="k">print</span> <span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">berlin</span><span class="o">.</span><span class="n">find_one</span><span class="p">())</span>
 
 <span class="n">insert_osm_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
 </pre></div>
@@ -12696,7 +12696,7 @@ But for now it looks ok.</p>
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#print (len(db.berlin.distinct(&quot;created&quot;)));</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#print (len(db.berlin.distinct(&quot;created&quot;)));</span>
 </pre></div>
 
 </div>
@@ -12729,7 +12729,7 @@ But for now it looks ok.</p>
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;dbstats&quot;</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;dbstats&quot;</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -12756,8 +12756,8 @@ But for now it looks ok.</p>
 <div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Size of Collection&#39;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">convert_bytes</span><span class="p">(</span><span class="mf">62980096.0</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Size of Collection&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">convert_bytes</span><span class="p">(</span><span class="mf">62980096.0</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -12795,7 +12795,7 @@ But for now it looks ok.</p>
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">berlin</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="s2">&quot;created.user&quot;</span><span class="p">)));</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">berlin</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="s2">&quot;created.user&quot;</span><span class="p">)));</span>
 </pre></div>
 
 </div>
@@ -12822,9 +12822,9 @@ But for now it looks ok.</p>
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pretty_print_list</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">pretty_print_list</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="n">member</span><span class="p">[</span><span class="s1">&#39;_id&#39;</span><span class="p">],</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">member</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
+        <span class="k">print</span> <span class="p">(</span><span class="n">member</span><span class="p">[</span><span class="s1">&#39;_id&#39;</span><span class="p">],</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">member</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -12847,7 +12847,7 @@ But for now it looks ok.</p>
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get top ten of contributing users</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># get top ten of contributing users</span>
 <span class="k">def</span> <span class="nf">count_entries_by_suburbs</span><span class="p">():</span>
     <span class="n">pipeline</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;$match&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;address.suburb&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$exists&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}},</span>
                 <span class="p">{</span><span class="s1">&#39;$group&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;_id&#39;</span> <span class="p">:</span> <span class="s1">&#39;$address.suburb&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$sum&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">}}},</span>       
@@ -12859,7 +12859,7 @@ But for now it looks ok.</p>
 
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">count_entries_by_suburbs</span><span class="p">()</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">aggregate</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Entries for suburbs:&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Entries for suburbs:&#39;</span><span class="p">)</span>
 <span class="n">pretty_print_list</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
 </pre></div>
 
@@ -12914,7 +12914,7 @@ Friedrichsfelde : 1
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get top ten of contributing users</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># get top ten of contributing users</span>
 <span class="k">def</span> <span class="nf">get_top_ten_users</span><span class="p">():</span>
     <span class="n">pipeline</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;$group&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;_id&#39;</span> <span class="p">:</span> <span class="s1">&#39;$created.user&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$sum&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">}}},</span>       
                 <span class="p">{</span><span class="s1">&#39;$sort&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">}},</span>
@@ -12926,7 +12926,7 @@ Friedrichsfelde : 1
 
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">get_top_ten_users</span><span class="p">()</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">aggregate</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Top 10 contributing users with counted entries:&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Top 10 contributing users with counted entries:&#39;</span><span class="p">)</span>
 <span class="n">pretty_print_list</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
 </pre></div>
 
@@ -12974,14 +12974,14 @@ Elwood : 8266
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_ways_and_nodes</span><span class="p">():</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">get_ways_and_nodes</span><span class="p">():</span>
     <span class="n">pipeline</span> <span class="o">=</span>  <span class="p">[{</span><span class="s1">&#39;$group&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;_id&#39;</span> <span class="p">:</span> <span class="s1">&#39;$type&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$sum&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">}}},</span>       
                 <span class="p">{</span><span class="s1">&#39;$sort&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">}}]</span>
     <span class="k">return</span> <span class="n">pipeline</span>
 
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">get_ways_and_nodes</span><span class="p">()</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">aggregate</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Different Types:&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Different Types:&#39;</span><span class="p">)</span>
 <span class="n">pretty_print_list</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  
 </pre></div>
 
@@ -13029,7 +13029,7 @@ turkish : 1
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">There</span> <span class="n">are</span> <span class="n">a</span> <span class="n">lot</span> <span class="n">of</span> <span class="n">rare</span> <span class="n">types</span><span class="o">.</span> <span class="n">In</span> <span class="n">one</span> <span class="nb">next</span> <span class="n">step</span><span class="p">,</span> <span class="n">we</span> <span class="n">could</span> <span class="n">clean</span> <span class="n">this</span> <span class="n">up</span> <span class="n">aswell</span><span class="o">.</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">There</span> <span class="n">are</span> <span class="n">a</span> <span class="n">lot</span> <span class="n">of</span> <span class="n">rare</span> <span class="n">types</span><span class="o">.</span> <span class="n">In</span> <span class="n">one</span> <span class="nb">next</span> <span class="n">step</span><span class="p">,</span> <span class="n">we</span> <span class="n">could</span> <span class="n">clean</span> <span class="n">this</span> <span class="n">up</span> <span class="n">aswell</span><span class="o">.</span>
 </pre></div>
 
 </div>
@@ -13052,7 +13052,7 @@ turkish : 1
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_overview_amenities</span><span class="p">():</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">get_overview_amenities</span><span class="p">():</span>
     <span class="n">pipeline</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;$match&#39;</span><span class="p">:{</span><span class="s1">&#39;amenity&#39;</span><span class="p">:{</span><span class="s1">&#39;$exists&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}}},</span>
                 <span class="p">{</span><span class="s1">&#39;$group&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="s1">&#39;$amenity&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$sum&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}}},</span>
                <span class="p">{</span><span class="s1">&#39;$sort&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">}},</span>
@@ -13061,7 +13061,7 @@ turkish : 1
     
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">get_overview_amenities</span><span class="p">()</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">aggregate</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Amenities:&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Amenities:&#39;</span><span class="p">)</span>
 <span class="n">pretty_print_list</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 
@@ -13111,15 +13111,15 @@ Because of the mixture of german and english there are different nodes to mark c
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_roads</span><span class="p">():</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">get_roads</span><span class="p">():</span>
     <span class="n">pipeline</span> <span class="o">=</span> <span class="p">[{</span> <span class="s1">&#39;$group&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="s1">&#39;highway&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$sum&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}}]</span>
     <span class="k">return</span> <span class="n">pipeline</span>
     
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">get_roads</span><span class="p">()</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">aggregate</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Roads:&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Roads:&#39;</span><span class="p">)</span>
 <span class="n">pretty_print_list</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;~~~~~~~~~~~~~~~~~~~~~~~&#39;</span><span class="p">)</span>       
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;~~~~~~~~~~~~~~~~~~~~~~~&#39;</span><span class="p">)</span>       
     
 <span class="c1">#find bycicle roads in berlin</span>
 <span class="k">def</span> <span class="nf">get_bicycle_roads</span><span class="p">():</span>
@@ -13134,9 +13134,9 @@ Because of the mixture of german and english there are different nodes to mark c
 
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">get_bicycle_roads</span><span class="p">()</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">aggregate</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Bicycle Roads:&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Bicycle Roads:&#39;</span><span class="p">)</span>
 <span class="n">pretty_print_list</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;~~~~~~~~~~~~~~~~~~~~~~~&#39;</span><span class="p">)</span>   
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;~~~~~~~~~~~~~~~~~~~~~~~&#39;</span><span class="p">)</span>   
 
 <span class="k">def</span> <span class="nf">get_total_amount_of_cycleways</span><span class="p">():</span>   
     <span class="n">pipeline</span> <span class="o">=</span> <span class="p">[{</span> <span class="s1">&#39;$match&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$or&#39;</span><span class="p">:</span>
@@ -13144,25 +13144,25 @@ Because of the mixture of german and english there are different nodes to mark c
                     <span class="p">{</span><span class="s1">&#39;bicycle_road&#39;</span><span class="p">:</span> <span class="s1">&#39;yes&#39;</span><span class="p">},</span>
                     <span class="p">{</span><span class="s1">&#39;cycleway&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$in&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;lane&#39;</span><span class="p">,</span> <span class="s1">&#39;opposite&#39;</span><span class="p">,</span> <span class="s1">&#39;shared&#39;</span><span class="p">,</span> <span class="s1">&#39;share_busway&#39;</span><span class="p">,</span> <span class="s1">&#39;track&#39;</span><span class="p">]}}]</span>
                     <span class="p">}},</span>
-                <span class="p">{</span><span class="s1">&#39;$group&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$sum&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}}}]</span> 
+                <span class="p">{</span><span class="s1">&#39;$group&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$sum&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}}}]</span> 
     <span class="k">return</span> <span class="n">pipeline</span>
     
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">get_total_amount_of_cycleways</span><span class="p">()</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">aggregate</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Bicycle Roads Total:&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Bicycle Roads Total:&#39;</span><span class="p">)</span>
 <span class="n">pretty_print_list</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;~~~~~~~~~~~~~~~~~~~~~~~&#39;</span><span class="p">)</span>   
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;~~~~~~~~~~~~~~~~~~~~~~~&#39;</span><span class="p">)</span>   
 
 <span class="k">def</span> <span class="nf">get_total_cycleways_with_cleaned_data</span><span class="p">():</span>
     <span class="n">pipeline</span> <span class="o">=</span> <span class="p">[{</span> <span class="s1">&#39;$match&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;bicycle_way&#39;</span><span class="p">:</span> <span class="s1">&#39;Yes&#39;</span><span class="p">}</span> <span class="p">},</span>
-                <span class="p">{</span><span class="s1">&#39;$group&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$sum&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}}}]</span> 
+                <span class="p">{</span><span class="s1">&#39;$group&#39;</span> <span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$sum&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}}}]</span> 
     <span class="k">return</span> <span class="n">pipeline</span>
 
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">get_total_cycleways_with_cleaned_data</span><span class="p">()</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">aggregate</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Bicycle Roads Total - cleaned data:&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Bicycle Roads Total - cleaned data:&#39;</span><span class="p">)</span>
 <span class="n">pretty_print_list</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;~~~~~~~~~~~~~~~~~~~~~~~&#39;</span><span class="p">)</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;~~~~~~~~~~~~~~~~~~~~~~~&#39;</span><span class="p">)</span> 
 </pre></div>
 
 </div>
@@ -13236,7 +13236,7 @@ Because Berlin is known for its masses of restaurants we want to take a closer l
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_overview_amenities</span><span class="p">():</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">get_overview_amenities</span><span class="p">():</span>
     <span class="n">pipeline</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;$match&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;amenity&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$exists&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> 
                             <span class="s1">&#39;amenity&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;$in&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;restaurant&#39;</span><span class="p">,</span> <span class="s1">&#39;fast_food&#39;</span><span class="p">,</span> <span class="s1">&#39;food_court&#39;</span><span class="p">,</span> <span class="s1">&#39;biergarten&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;bbq&#39;</span><span class="p">,</span> <span class="s1">&#39;cafe&#39;</span><span class="p">]</span> 
                            <span class="p">}}},</span>
@@ -13248,7 +13248,7 @@ Because Berlin is known for its masses of restaurants we want to take a closer l
     
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">get_overview_amenities</span><span class="p">()</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">aggregate</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Restaurants by cuisine:&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Restaurants by cuisine:&#39;</span><span class="p">)</span>
 <span class="n">pretty_print_list</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 
@@ -13287,18 +13287,22 @@ pizza : 69
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Additional suggestions for improving and analyzing the data</strong></p>
-<p><em>Length of bicycle ways and alles bio</em></p>
-
-<pre><code>- it would be to calculate the length of all bycicley ways compared to the 'normal' street length. 
-- It also would be interessting to calculate the the percentage of the surface types, because it is said that Berlin is a "green" city.
-
-</code></pre>
-<p><em>Improve the dataset</em></p>
-
-<pre><code>- Gameification would be a good way to encourage people to contribute more and correct data. For example games that are using geodata, like Pokemon Go or Geocaching,
-  could add functionality to the osm data. People could be attracted by leveling up or get other benefits for the game.  
-- Because nowadays google maps is very widely used and people can easily add amenities etc. via google, it would be great if that data could be merged into the OSM data.</code></pre>
+<h2 id="Additional-suggestions-for-improving-and-analyzing-the-data">Additional suggestions for improving and analyzing the data<a class="anchor-link" href="#Additional-suggestions-for-improving-and-analyzing-the-data">&#182;</a></h2><h4 id="Length-of-bicycle-ways-and-alles-bio">Length of bicycle ways and alles bio<a class="anchor-link" href="#Length-of-bicycle-ways-and-alles-bio">&#182;</a></h4><ul>
+<li>it would be to calculate the length of all bycicley ways compared to the 'normal' street length. </li>
+<li>It also would be interessting to calculate the the percentage of the surface types, because it is said that Berlin is a "green" city.</li>
+</ul>
+<h4 id="Improve-the-dataset">Improve the dataset<a class="anchor-link" href="#Improve-the-dataset">&#182;</a></h4><ul>
+<li>Gamification would be a good way to encourage people to contribute more and correct data. For example games that are using geodata, like Pokemon Go or Geocaching,
+  could add functionality to the osm data. People could be attracted by leveling up or get other benefits for the game.  </li>
+<li>Because nowadays google maps is very widely used and people can easily add amenities etc. via google, it would be great if that data could be merged into the OSM data.</li>
+</ul>
+<h4 id="Potential-problems">Potential problems<a class="anchor-link" href="#Potential-problems">&#182;</a></h4><ul>
+<li>The language gap may be a problem. It may be that keys from different languages exist in one area, altough they mean the same. When doing analytics this can be missed out easily. </li>
+<li>Missing or wrong data is a problem. This may skew findings in analytics or simply misslead people. <a href="http://maproulette.org/">http://maproulette.org/</a> could help to minor the problems.</li>
+<li>Add totally wrong data in bad faith. As everone can add data to the OSM Project, it can happen that people add false data just for fun.</li>
+</ul>
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>The data set was cleaned, so that the language gap is bridged for our investigations. We could have cleaned out the data more, but as we want to have an basic overwiew, the cleaning amount is right. 
+It is quite surprising that in a city where almost all inhabitants are "super greenies", the amount of bicycle ways is that small compared to the normal highways. It would be interesting to check the amount of bicycle ways in Amsterdam and compare it to Berlin.</p>
 
 </div>
 </div>
