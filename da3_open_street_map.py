@@ -10,8 +10,10 @@ from collections import defaultdict
 OSM_FILE = 'berlin_map.osm'
 SAMPLE_FILE = 'berlin_map_reduced.osm'
 
-#check file size
+'''
+check file size
 #resource: http://stackoverflow.com/questions/2104080/how-to-check-file-size-in-python
+'''
 
 def convert_bytes(num):
     """
@@ -70,10 +72,10 @@ sample_size = file_size(SAMPLE_FILE)
 print ('SampleSize', sample_size)
 
 #get benchmark data
-"""
+    """
     Reference:
     https://classroom.udacity.com/nanodegrees/nd002/parts/0021345404/modules/316820862075462/lessons/768058569/concepts/8426285720923#
-"""
+    """
 def get_benchmark_data(filename):
     users = set()
     count_nodes = 0
@@ -101,8 +103,10 @@ print ('NODES:', count_nodes)
 print ('WAYS:', count_ways)
 print ('RELATIONS', count_relations)
 
-'''reference:
-https://classroom.udacity.com/nanodegrees/nd002/parts/0021345404/modules/316820862075462/lessons/768058569/concepts/8755386150923#'''
+'''
+reference:
+https://classroom.udacity.com/nanodegrees/nd002/parts/0021345404/modules/316820862075462/lessons/768058569/concepts/8755386150923#
+'''
 
 #start with lower case letters, due to different ways of writing street names in german
 expected = ['straße', 'platz', 'gasse', 'weg', 'allee', 'damm', 'ufer', 'graben', 'brücke', 
@@ -234,7 +238,7 @@ print (wrong_suburbs)
 #check if postal code and suburb are correct
 check_suburbs_and_postal_codes = defaultdict(set)
     
-def audit_postal_code_and_suburb(osmfile):
+def audit_postal_code_and_suburb(osmfile):   
     osm_file = open(osmfile, 'rb')
     for event, elem in ET.iterparse(osm_file, events=("start",)):
         current_suburb = None
@@ -269,7 +273,8 @@ check_check(check_suburbs_and_postal_codes, suburbs_with_postal_codes)
 ### 2. transform to json
 ''' 
 reference:
-https://classroom.udacity.com/nanodegrees/nd002/parts/0021345404/modules/316820862075462/lessons/768058569/concepts/8755386150923#'''
+https://classroom.udacity.com/nanodegrees/nd002/parts/0021345404/modules/316820862075462/lessons/768058569/concepts/8755386150923#
+'''
 
 CREATED = [ "version", "changeset", "timestamp", "user", "uid"]
 BICYCLE_WAYS = ["cycleway", "bicycle_road", "bicycle"]
@@ -377,20 +382,19 @@ db = client.berlin
 
 def insert_osm_data(infile, db):
     db.berlin.drop()      
-    #import data into a collection named "berlin"
     db.berlin.insert_many(infile)
     print (db.berlin.find_one())
 
 insert_osm_data(data, db)
 
-print (len(db.berlin.distinct("created")));
+print (len(db.berlin.distinct("created")))
 
 print (db.command("dbstats"))
 
 print ('Size of Collection')
 print (convert_bytes(62980096.0))
 
-print (len(db.berlin.distinct("created.user")));
+print (len(db.berlin.distinct("created.user")))
 
 def pretty_print_list(d):
     for member in d:
@@ -409,7 +413,7 @@ def aggregate(db, pipeline):
 pipeline = count_entries_by_suburbs()
 result = aggregate(db, pipeline)
 print ('Suburbs:')
-pretty_print_list(result);
+pretty_print_list(result)
 
 # get top ten of contributing users
 def get_top_ten_users():
@@ -424,7 +428,7 @@ def aggregate(db, pipeline):
 pipeline = get_top_ten_users()
 result = aggregate(db, pipeline)
 print ('Top 10 contributing users with counted entries:')
-pretty_print_list(result);
+pretty_print_list(result)
 
 def get_ways_and_nodes():
     pipeline =  [{'$group' : { '_id' : '$type', 'count' : {'$sum' : 1}}},       
