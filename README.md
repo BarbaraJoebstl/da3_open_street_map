@@ -87,7 +87,7 @@ mapping_suburbs = { "Alt-Treptow": "Köpenick",
                     "Charlottenburg-Wilmersdorf": "Charlottenburg" }
 ```
 
-### Data Exploration with MongoDB
+## Data Exploration with MongoDB
 
 **Get statistics of our database**
 ```python
