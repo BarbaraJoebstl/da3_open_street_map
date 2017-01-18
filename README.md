@@ -38,9 +38,7 @@ The area contains the central area of Berlin. As it is one of the biggest cities
  - Incomplete data. 
 
 ## Auditing
-
 *Problems encounterd while auditing street names:*
-
    In German language there a lot of different namings and writings for streets: For example a 'Straße' can be 'Auerstraße' or     'Antwerpener Straße' or 'Alfred-Jung-Straße' or 'Straße des 17. Juni'. This happens also to other street types, like              '*weg*', '*zeile*', '*platz*' and also for streets that are or used to be near rivers like: '*damm*', '*ufer*', '*graben*'.
    Because there a lot of bridges in Berlin, bridges belong to ways *brücke*. 
    A street name starting with 'Zur ', 'Am ' or 'An ' simply means 'at ', but is also a valid street name. 
@@ -57,7 +55,7 @@ The area contains the central area of Berlin. As it is one of the biggest cities
     Park : 6
     ...
 
-### Audit postal codes and suburbs
+ **Audit postal codes and suburbs**
 
 Audit Post codes and suburbs The postal code in Berlin ranges from 10115 to 14199.
 In the following task we want to check if the postal code is valid for Berlin and if 
@@ -241,7 +239,6 @@ pizza : 69
 ### Additional suggestions for improving and analyzing the data
 
 #### Length of bicycle ways and alles bio
-
 - it would be to calculate the length of all bycicley ways compared to the 'normal' street length. 
 - It also would be interessting to calculate the the percentage of the surface types, because it is said that Berlin is a "green" city.
 
@@ -250,6 +247,7 @@ pizza : 69
     could add functionality to the osm data. People could be attracted by leveling up or get other benefits for the game.  
 - Because nowadays google maps is very widely used and people can easily add amenities etc. via google, it would be great if that data could be merged into the OSM data.
 
-#### potential problems
-
-
+#### Potential problems
+ - The language gap may be a problem. It may be that keys from different languages exist in one area, altough they mean the same. When doing analytics this can be missed out easily. 
+ - Missing or wrong data is a problem. This may skew findings in analytics or simply misslead people. http://maproulette.org/ could help to minor the problems.
+- Add totally wrong data in bad faith. As everone can add data to the OSM Project, it can happen that people add false data just for fun.
