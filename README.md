@@ -24,9 +24,9 @@ The area contains the central area of Berlin. As it is one of the biggest cities
   </way>
 
 **File Sizes**
--OSMSize 154.6 MB
--SampleSize 11.3 MB
--Size of cleand data in mongoDB: 60.1 MB
+  - OSMSize 154.6 MB
+  - SampleSize 11.3 MB
+  - Size of cleand data in mongoDB: 60.1 MB
 
 **Anticipated Problems**
  - The mixture between English and German words makes it a little bit more difficult to compare values. For example bicycle ways can be set as "cycleway", "bicycle_road" or "bicycle".
@@ -196,15 +196,9 @@ def get_total_amount_of_cycleways():
     return pipeline   
 ```
 
-Roads:
-highway : 681059
-~~~~~~~~~~~~~~~~~~~~~~~
-Bicycle Roads Total:
-None : 2211
-~~~~~~~~~~~~~~~~~~~~~~~
-Bicycle Roads Total - cleaned data:
-None : 5652
-~~~~~~~~~~~~~~~~~~~~~~~
+Roads : 681059
+Bicycle Roads Total: 2211
+Bicycle Roads Total - cleaned data: 5652
 
 
 Compared to the total number of highways, the number of bicycle roads in this map is extremly small
