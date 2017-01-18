@@ -250,3 +250,7 @@ pizza : 69
  - The language gap may be a problem. It may be that keys from different languages exist in one area, altough they mean the same. When doing analytics this can be missed out easily. 
  - Missing or wrong data is a problem. This may skew findings in analytics or simply misslead people. http://maproulette.org/ could help to minor the problems.
  - Add totally wrong data in bad faith. As everone can add data to the OSM Project, it can happen that people add false data just for fun.
+
+##Conclusion
+The data set was cleaned, so that the language gap is bridged for our investigations. We could have cleaned out the data more, but as we want to have an basic overwiew, the cleaning amount is right. 
+It is quite surprising that in a city where almost all inhabitants are "super greenies", the amount of bicycle ways is that small compared to the normal highways. It would be interesting to check the amount of bicycle ways in Amsterdam and compare it to Berlin.
