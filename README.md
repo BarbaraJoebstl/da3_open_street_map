@@ -1,5 +1,5 @@
 
-#DA3 OPEN STREET MAP - DATA WRANGLING WITH MONGODB
+##DA3 OPEN STREET MAP - DATA WRANGLING WITH MONGODB
 
 ###Map Area: Berlin, Germany* - https://www.openstreetmap.org/#map=13/52.5180/13.4076
 The area contains the central area of Berlin. As it is one of the biggest cities in Europe, we can expect a lot of additional information about this area from the osm project.
@@ -236,8 +236,7 @@ coffee_shop : 70
 pizza : 69
 
 
-### Additional suggestions for improving and analyzing the data
-
+## Additional suggestions for improving and analyzing the data
 #### Length of bicycle ways and alles bio
 - it would be to calculate the length of all bycicley ways compared to the 'normal' street length. 
 - It also would be interessting to calculate the the percentage of the surface types, because it is said that Berlin is a "green" city.
@@ -250,4 +249,4 @@ pizza : 69
 #### Potential problems
  - The language gap may be a problem. It may be that keys from different languages exist in one area, altough they mean the same. When doing analytics this can be missed out easily. 
  - Missing or wrong data is a problem. This may skew findings in analytics or simply misslead people. http://maproulette.org/ could help to minor the problems.
-- Add totally wrong data in bad faith. As everone can add data to the OSM Project, it can happen that people add false data just for fun.
+ - Add totally wrong data in bad faith. As everone can add data to the OSM Project, it can happen that people add false data just for fun.
