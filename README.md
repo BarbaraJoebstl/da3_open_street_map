@@ -14,6 +14,7 @@ The project contains the following sections:
 
 ##Run
 You can run the .ipynb file with the [python notebook](https://ipython.org/notebook.html).
+Or simply take a look at the output [here](https://tschebee.net/data-wrangling-with-openstreetmap-data).
 
 ##Data
   - OSMSize 154.6 MB
